@@ -503,8 +503,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  //Moved all non changing items below outside of for loop
+  var phase = Math.sin((document.body.scrollTop / 1250));
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    phase = phase + (i % 5);
     //Let's log these numbers to see exactly what I get per iteration?
     console.log(phase,document.body.scrollTop / 1250)
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -527,15 +529,19 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 20; i++) {
-    var elem = document.createElement('img');
+  //Moved all non-changing statements below outside the for loop
+var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
+    document.querySelector("#movingPizzas1").appendChild(elem);
+
+  for (var i = 0; i < 5; i++) {
+    
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    
   }
   updatePositions();
 });
