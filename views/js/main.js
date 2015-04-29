@@ -502,7 +502,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementsByClassName('.mover');
+  var items = document.querySelectorAll('.mover');
   //Moved all non changing items below outside of for loop
   
   for (var i = 0; i < items.length; i++) {
@@ -531,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;  
 
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 100; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
