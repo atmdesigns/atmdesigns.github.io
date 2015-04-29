@@ -502,7 +502,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementByClassName('.mover');
+  var items = document.getElementsByClassName('.mover');
   //Moved all non changing items below outside of for loop
   var phase = Math.sin((document.body.scrollTop / 1250));
   for (var i = 0; i < items.length; i++) {
