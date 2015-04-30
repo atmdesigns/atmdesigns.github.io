@@ -507,10 +507,10 @@ function updatePositions() {
   
 
   //Moved all non changing items below outside of for loop
-   var phase = Math.sin((document.body.scrollTop / 1250));  
+   
   for (var i = 0; i < items.length; i++) {
     phase = phase + (i % 5);
-    
+    var phase = Math.sin((document.body.scrollTop / 1250));  
     //Let's log these numbers to see exactly what I get per iteration?
     //console.log(phase,document.body.scrollTop / 1250)
    
