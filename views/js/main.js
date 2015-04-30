@@ -503,7 +503,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
   //Changed query selector all to getElementsByClassName since it's more efficient
-  var items = document.getElementsByClassName('.mover');
+  var items = document.querySelectorAll('.mover');
   
 
   //Moved all non changing items below outside of for loop
