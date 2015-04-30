@@ -503,13 +503,15 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  var items_length = items.length;
+
   //Moved all non changing items below outside of for loop
-  
-  for (var i = 0; i < items.length; i++) {
+   var phase = Math.sin((document.body.scrollTop / 1250));
+  for (var i = 0; i < items_length; i++) {
     phase = phase + (i % 5);
     //Let's log these numbers to see exactly what I get per iteration?
-    console.log(phase,document.body.scrollTop / 1250)
-    var phase = Math.sin((document.body.scrollTop / 1250));
+    //console.log(phase,document.body.scrollTop / 1250)
+   
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
