@@ -2,7 +2,7 @@ Optimizations I Made
 1.  Changed queryselector to getElementsByClassName to reduce load time when resizing pizza
 2.  Resized the pizza image (made it smaller)
 3.  Moved some of the calculations in the for loops to outside the loops
-4.  Lowered quality on pizza.jpg, image1.jpg, image3.jpg to 80% to optimize images without loss of quality
+4.  Lowered quality on pizza.jpg, image1.jpg, image3.jpg to 30% to optimize images without loss of quality
 5.  In the ChangePizzaSlices function, changed queryselectorAll to getElementsByClassName
 6.  In the updatePositions function, made a variable for list length for use in the for loop statement
 7.  Created pizzeria1.jpg since pizzeria.jpg was used on index.html and pizza.html, but with different sizes.
@@ -10,7 +10,7 @@ Optimizations I Made
 
 
 
-
+To run the project, use Page Insights to test that speed is 90% or highter.  Use Chrome development tools to ensure pizza resizing takes less than 5ms and page itself is less than 60fps.
 
 
 ## Website Performance Optimization portfolio project
