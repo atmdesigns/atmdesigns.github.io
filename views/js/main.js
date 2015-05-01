@@ -455,9 +455,12 @@ var resizePizzas = function(size) {
 
     //changed querySelectorAll to getElementsByClass name as it is more efficient
     for (var i = 0; i < myContainer.length; i++) {
-      var dx = determineDx(document.getElementsByClassName("randomPizzaContainer")[i], size);
-      var newwidth = (document.getElementsByClassName("randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
+      //var dx = determineDx(document.getElementsByClassName("randomPizzaContainer")[i], size);
+      //var newwidth = (document.getElementsByClassName("randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+      //document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
+      var dx = determineDx(myContainer[i], size);
+      var newwidth = myContainer[i].offsetWidth + dx) + 'px';
+      myContainer[i].style.width = newwidth;
     }
   }
 
