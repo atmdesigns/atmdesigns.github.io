@@ -458,15 +458,15 @@ var resizePizzas = function(size) {
       case "1":
         var dx = -96;
         var newwidth = 196+ 'px';
-        return;
+        break;
       case "2":
         var dx = -195;
         var newwidth = 195+ 'px';
-        return;
+        break;
       case "3":
         var dx = 195;
         var newwidth = 195+ 'px';
-        return;
+        break;
 
     }
     
