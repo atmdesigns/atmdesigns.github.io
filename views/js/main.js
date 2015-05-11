@@ -471,7 +471,7 @@ var resizePizzas = function(size) {
     }
     
     //changed querySelectorAll to getElementsByClass name as it is more efficient
-    for (var i = 0; i < document.getElementsByClassName("randomPizzaContainer").length; i++) {
+    for (var i = 0; i < (document.getElementsByClassName("randomPizzaContainer").length); i++) {
       myContainer[i].style.width = newwidth;
       console.log ("dx" + dx + "size" + size + "offset" + myContainer[i].offsetWidth);
       
