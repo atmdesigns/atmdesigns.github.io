@@ -1,16 +1,12 @@
 /*
 Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
 jank-free at 60 frames per second.
-
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
-
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
 http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
-
 Creator:
 Cameron Pittman, Udacity Course Developer
 cameron *at* udacity *dot* com
@@ -470,8 +466,11 @@ var resizePizzas = function(size) {
 
     }
     
+
     //changed querySelectorAll to getElementsByClass name as it is more efficient
-    for (var i = 0; i < (document.getElementsByClassName("randomPizzaContainer").length); i++) {
+    for (var i = 0; i < myContainer.length; i++) {
+      //var dx = determineDx(myContainer[i], size);
+      //var newwidth = (myContainer[i].offsetWidth + dx) + 'px';
       myContainer[i].style.width = newwidth;
       console.log ("dx" + dx + "size" + size + "offset" + myContainer[i].offsetWidth);
       
@@ -485,7 +484,7 @@ var resizePizzas = function(size) {
   window.performance.measure("measure_pizza_resize", "mark_start_resize", "mark_end_resize");
   var timeToResize = window.performance.getEntriesByName("measure_pizza_resize");
   console.log("Time to resize pizzas: " + timeToResize[0].duration + "ms");
-
+};
 
 window.performance.mark("mark_start_generating"); // collect timing data
 // Moved pizzasDiv outside of for loop since it doesn't change
@@ -533,6 +532,9 @@ function updatePositions() {
   for (var i = 0; i < items.length; i++) {
     phase = phase + (i % 5);
     var phase = Math.sin((document.body.scrollTop / 1250));  
+    //Let's log these numbers to see exactly what I get per iteration?
+    //console.log(phase,document.body.scrollTop / 1250)
+   
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
