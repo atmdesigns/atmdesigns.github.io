@@ -449,31 +449,12 @@ var resizePizzas = function(size) {
 
 //Put getelementsbyclass into a local variable to reduce DOM calls
     var myContainer = document.getElementsByClassName("randomPizzaContainer");
-    
-    switch(size) {
-      case "1":
-        var dx = -96;
-        var newwidth = 196+ 'px';
-        return;
-      case "2":
-        var dx = -195;
-        var newwidth = 195+ 'px';
-        return;
-      case "3":
-        var dx = 195;
-        var newwidth = 195+ 'px';
-        return;
-
-    }
-    
+    var dx = determineDx(myContainer[0], size);
 
     //changed querySelectorAll to getElementsByClass name as it is more efficient
     for (var i = 0; i < myContainer.length; i++) {
-      //var dx = determineDx(myContainer[i], size);
-      //var newwidth = (myContainer[i].offsetWidth + dx) + 'px';
+      var newwidth = (myContainer[i].offsetWidth + dx) + 'px';
       myContainer[i].style.width = newwidth;
-      console.log ("dx" + dx + "size" + size + "offset" + myContainer[i].offsetWidth);
-      
     }
   }
 
@@ -525,13 +506,13 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
   //Changed query selector all to getElementsByClassName since it's more efficient
   var items = document.getElementsByClassName('mover');
-  
+  var myScroll = document.body.scrollTop;
 
   //Moved all non changing items below outside of for loop
    
   for (var i = 0; i < items.length; i++) {
-    phase = phase + (i % 5);
-    var phase = Math.sin((document.body.scrollTop / 1250));  
+    var phase = phase + (i % 5);
+    phase = Math.sin((myScroll / 1250));  
     //Let's log these numbers to see exactly what I get per iteration?
     //console.log(phase,document.body.scrollTop / 1250)
    
