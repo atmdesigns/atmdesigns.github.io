@@ -14,6 +14,8 @@ In main.js
 -  In the updatePositions function, made a variable for list length for use in the for loop statement
 - Changed pizzeria.jpg to a .png file to make it smaller
 - Moved pizzasDiv outside of for loop since it doesn't change
+- Moved scrollTop to a local variable to improve performance
+
 
 In pizza.html
 - added viewport meta tag in head
