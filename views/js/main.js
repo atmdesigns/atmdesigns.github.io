@@ -450,22 +450,7 @@ var resizePizzas = function(size) {
 //Put getelementsbyclass into a local variable to reduce DOM calls
     var myContainer = document.getElementsByClassName("randomPizzaContainer");
     var dx = determineDx(myContainer[0], size);
-
-     switch(size) {
-      case "1":
-        
-        var newwidth = 196+ 'px';
-        return;
-      case "2":
-        
-        var newwidth = 195+ 'px';
-        return;
-      case "3":
-        
-        var newwidth = 195+ 'px';
-        return;
-
-    }
+    var newwidth = (myContainer[0].offsetWidth + dx) + 'px';
     //changed querySelectorAll to getElementsByClass name as it is more efficient
     for (var i = 0; i < myContainer.length; i++) {
       
